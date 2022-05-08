@@ -32,7 +32,7 @@ const { ethers } = require("ethers");
 */
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS.mumbai; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = NETWORKS.rinkeby; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -565,7 +565,7 @@ function App(props) {
 
       <div style={{ marginTop: 32, opacity: 0.5 }}>
         {/* Add your address here */}
-        Created by <Address value={address} ensProvider={mainnetProvider} fontSize={16} />
+        Created by <Address value={address} ensProvider={mainnetProvider} fontSize={16} blockExplorer={blockExplorer} />
       </div>
 
       <div style={{ marginTop: 32, opacity: 0.5 }}>

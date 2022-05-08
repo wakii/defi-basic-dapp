@@ -2,6 +2,7 @@ packages/subgraph/subgraph.yaml
 packages/subgraph/generated
 packages/subgraph/abis/*
 packages/hardhat/*.txt
+packages/hardhat/.env
 **/aws.json
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
@@ -54,6 +55,7 @@ artifacts
 # misc
 .DS_Store
 .env*
+.env
 
 # debug
 npm-debug.log*
