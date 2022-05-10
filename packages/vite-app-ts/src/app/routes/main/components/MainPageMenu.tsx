@@ -23,41 +23,5 @@ export const MainPageMenu: FC<IMainPageMenuProps> = (props) => (
         Your Token
       </Link>
     </Menu.Item>
-    <Menu.Item key="/debug">
-      <Link
-        onClick={() => {
-          props.setRoute('/debug');
-        }}
-        to="/debug">
-        Debug
-      </Link>
-    </Menu.Item>
-    <Menu.Item key="/hints">
-      <Link
-        onClick={() => {
-          props.setRoute('/hints');
-        }}
-        to="/hints">
-        Hints
-      </Link>
-    </Menu.Item>
-    <Menu.Item key="/mainnetdai">
-      <Link
-        onClick={() => {
-          props.setRoute('/mainnetdai');
-        }}
-        to="/mainnetdai">
-        Mainnet DAI
-      </Link>
-    </Menu.Item>
-    <Menu.Item key="/subgraph">
-      <Link
-        onClick={() => {
-          props.setRoute('/subgraph');
-        }}
-        to="/subgraph">
-        Subgraph
-      </Link>
-    </Menu.Item>
   </Menu>
 );

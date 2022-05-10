@@ -18,6 +18,8 @@ packages/**/data
 
 # ts
 packages/hardhat-ts/cache
+packages/hardhat-ts/mnemonic.txt
+packages/hardhat-ts/mnemonic.secret
 # secrets
 .secret
 

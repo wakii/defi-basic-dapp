@@ -105,40 +105,6 @@ export const Main: FC = () => {
           <Route exact path="/">
             <YourToken mainnetProvider={scaffoldAppProviders.mainnetProvider}></YourToken>
           </Route>
-          <Route exact path="/debug">
-            <MainPageContracts
-              scaffoldAppProviders={scaffoldAppProviders}
-              mainnetContracts={mainnetContracts}
-              appContractConfig={appContractConfig}
-            />
-          </Route>
-          {/* you can add routes here like the below examlples */}
-          <Route path="/hints">
-            <Hints
-              address={ethersContext?.account ?? ''}
-              yourCurrentBalance={yourCurrentBalance}
-              mainnetProvider={scaffoldAppProviders.mainnetProvider}
-              price={ethPrice}
-            />
-          </Route>
-          <Route path="/mainnetdai">
-            {mainnetProvider != null && (
-              <GenericContract
-                contractName="DAI"
-                contract={mainnetContracts?.['DAI']}
-                mainnetProvider={scaffoldAppProviders.mainnetProvider}
-                blockExplorer={NETWORKS['mainnet'].blockExplorer}
-                contractConfig={appContractConfig}
-              />
-            )}
-          </Route>
-          <Route path="/subgraph">
-            <Subgraph
-              subgraphUri={subgraphUri}
-              writeContracts={writeContracts}
-              mainnetProvider={scaffoldAppProviders.mainnetProvider}
-            />
-          </Route>
         </Switch>
       </BrowserRouter>
 

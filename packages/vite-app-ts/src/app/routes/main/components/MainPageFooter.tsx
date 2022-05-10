@@ -34,12 +34,12 @@ export const MainPageFooter: FC<IMainPageFooterProps> = (props) => {
         padding: 10,
       }}>
       <Row align="middle" gutter={[4, 4]}>
-        <Col span={8}>
+        <Col span={12}>
           <Ramp price={props.price} address={ethersContext?.account ?? ''} networks={NETWORKS} />
         </Col>
 
         <Col
-          span={8}
+          span={12}
           style={{
             textAlign: 'center',
             opacity: 0.8,
@@ -51,29 +51,6 @@ export const MainPageFooter: FC<IMainPageFooterProps> = (props) => {
             speed="average"
           />
         </Col>
-        <Col
-          span={8}
-          style={{
-            textAlign: 'center',
-            opacity: 1,
-          }}>
-          <Button
-            onClick={() => {
-              window.open('https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA');
-            }}
-            size="large"
-            shape="round">
-            <span
-              style={{
-                marginRight: 8,
-              }}
-              role="img"
-              aria-label="support">
-              💬
-            </span>
-            Support
-          </Button>
-        </Col>
       </Row>
 
       <Row align="middle" gutter={[4, 4]}>
@@ -81,8 +58,8 @@ export const MainPageFooter: FC<IMainPageFooterProps> = (props) => {
           {
             /*  if the local provider has a signer, let's show the faucet:  */
             faucetAvailable &&
-            props.scaffoldAppProviders?.mainnetProvider &&
-            props.scaffoldAppProviders?.localProvider ? (
+              props.scaffoldAppProviders?.mainnetProvider &&
+              props.scaffoldAppProviders?.localProvider ? (
               <Faucet
                 localProvider={props.scaffoldAppProviders.localProvider}
                 price={props.price}
