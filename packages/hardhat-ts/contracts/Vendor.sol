@@ -15,7 +15,6 @@ contract Vendor is Ownable {
     yourToken = YourToken(tokenAddress);
   }
 
-  // ToDo: create a payable buyTokens() function:
   function buyTokens() public payable returns (uint256 tokenAmount) {
     uint256 amountOfTokens = msg.value * tokensPerEth;
 
@@ -27,13 +26,11 @@ contract Vendor is Ownable {
     return amountOfTokens;
   }
 
-  // ToDo: create a withdraw() function that lets the owner withdraw ETH
   function withdraw() public onlyOwner {
     (bool success, ) = msg.sender.call{value: address(this).balance}('');
     require(success, 'Withdraw Failed');
   }
 
-  // ToDo: create a sellTokens() function:
   function sellTokens(uint256 theAmount) public {
     require(theAmount > 0, 'Amount should be grater than 0');
 

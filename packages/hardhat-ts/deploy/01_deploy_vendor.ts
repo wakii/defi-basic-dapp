@@ -20,7 +20,6 @@ const func: DeployFunction = async (hre: HardhatRuntimeEnvironmentExtended) => {
 
   const vendor = await ethers.getContract("Vendor", deployer);
 
-  // Todo: transfer the tokens to the vendor
   console.log("\n 🏵  Sending all 1000 tokens to the vendor...\n");
 
   const result = await yourToken.transfer(
