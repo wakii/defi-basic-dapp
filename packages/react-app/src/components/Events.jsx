@@ -34,7 +34,9 @@ export default function Events({ contracts, contractName, eventName, localProvid
           ? "🎈-->⟠ Address | Trade | AmountOut | AmountIn"
           : eventName === "LiquidityProvided"
           ? "➕ Address | Liquidity Minted | Eth In | Balloons In"
-          : "➖ Address | Liquidity Withdrawn | ETH out | Balloons Out "}
+          : eventName === "LiquidityRemoved"
+          ? "➖ Address | Liquidity Withdrawn | ETH out | Balloons Out "
+          : "➖ Address Owner| Address Spender | Approved Value "}
       </h2>
       <List
         bordered

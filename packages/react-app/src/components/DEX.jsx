@@ -139,7 +139,7 @@ export default function Dex(props) {
         <Card
           title={
             <div>
-              <Address value={contractAddress} />
+              <Address value={contractAddress} blockExplorer={props.blockExplorer}/>
               <div style={{ float: "right", fontSize: 24 }}>
                 {parseFloat(ethers.utils.formatEther(contractBalance)).toFixed(4)} ⚖️
                 <TokenBalance name={tokenName} img={"🎈"} address={contractAddress} contracts={props.readContracts} />

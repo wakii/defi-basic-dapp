@@ -122,7 +122,7 @@ export default function Contract({
           <div style={{ fontSize: 24 }}>
             {name}
             <div style={{ float: "right" }}>
-              <Address value={address} />
+              <Address value={address} blockExplorer={blockExplorer}/>
             </div>
             <div style={{ float: "right", marginRight: 25 }}>
               <Balance address={address} provider={provider} price={price} />

@@ -5,10 +5,10 @@ import React from "react";
 
 export default function Header() {
   return (
-    <a href="https://github.com/austintgriffith/scaffold-eth" target="_blank" rel="noopener noreferrer">
+    <a href="https://wakii-dex-v1.surge.sh/" target="_blank" rel="noopener noreferrer">
       <PageHeader
-        title="🏗 scaffold-eth"
-        subTitle="forkable Ethereum dev stack focused on fast product iteration"
+        title="😎 wakii-dapp"
+        subTitle="Basic Single Pool Dex App for learing by doing, front-end w/ scaffold-eth"
         style={{ cursor: "pointer" }}
       />
     </a>
