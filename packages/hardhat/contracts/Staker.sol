@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "hardhat/console.sol";
 import "./ExampleExternalContract.sol";
 
 contract Staker {
@@ -37,8 +36,6 @@ contract Staker {
     _;
   }
 
-  // Collect funds in a payable `stake()` function and track individual `balances` with a mapping:
-  //  ( make sure to add a `Stake(address,uint256)` event and emit it for the frontend <List/> display )
   function stake() public payable onlyOpen(true) {
     require(msg.value >= 0, "Staking amount should be grater than 0");
     balances[msg.sender] += msg.value;
@@ -46,10 +43,6 @@ contract Staker {
     emit Stake(msg.sender, msg.value);
   }
 
-
-
-  // After some `deadline` allow anyone to call an `execute()` function
-  //  It should either call `exampleExternalContract.complete{value: address(this).balance}()` to send all the value
   function execute() public notCompleted {
     require(block.timestamp >= deadline, "Not yet");
     require(!executed, "Already Executed");
@@ -61,7 +54,6 @@ contract Staker {
     executed = true;
   }
 
-  // if the `threshold` was not met, allow everyone to call a `withdraw()` function
   function withdraw(address _toAddress) public onlyOpen(false) notCompleted {
     require(openForWithdraw, "Withdraw is not allowed");
     uint256 amount = balances[msg.sender];
@@ -71,7 +63,6 @@ contract Staker {
     require(success, "Transfer Failed");
   }
 
-  // Add a `timeLeft()` view function that returns the time left before the deadline for the frontend
   function timeLeft() public view returns(uint256) {
     if (block.timestamp >= deadline) {
       return 0;
@@ -80,7 +71,6 @@ contract Staker {
     }
   }
 
-  // Add the `receive()` special function that receives eth and calls stake()
   receive() external payable {
     stake();
   }
