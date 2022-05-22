@@ -2,7 +2,7 @@
 
 ## TL;DR 
 - Demo : https://wakii-vendor.surge.sh/
-- Code : https://rinkeby.etherscan.io/address/0xd4c21b31Eed8dEC718016DCE5fBC35F7514C47F3
+- Code : https://rinkeby.etherscan.io/address//0xf163EE8639bBF85065c635358b4d407948710261
 - deployed at Rinkeby
 
 ---
