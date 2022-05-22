@@ -72,6 +72,14 @@ export const YourToken: FC<IYourTokenProps> = (props) => {
     getTokensPerEth();
   }, [vendorContract]);
 
+  const [vendorEtherscan, setVendorEtherscan] = useState<string>();
+  const [tokenEtherscan, setTokenEtherscan] = useState<string>();
+  useEffect(() => {
+    const rinkebyEtherscan = "https://rinkeby.etherscan.io/address/"
+    setVendorEtherscan(`${rinkebyEtherscan}/${vendorContract?.address}`)
+    setTokenEtherscan(`${rinkebyEtherscan}/${yourTokenContract?.address}`)
+  })
+
   const vendorApproval = useContractReader<BigNumber[]>(yourTokenContract, {
     contractName: 'YourToken',
     functionName: 'allowance',
@@ -177,11 +185,13 @@ export const YourToken: FC<IYourTokenProps> = (props) => {
 
   const buyTokensEvents = useEventListener(vendorContract, 'BuyTokens', 1);
   const sellTokensEvents = useEventListener(vendorContract, 'SellTokens', 1);
-
+  // const vendorEtherscan = `https://rinkeby.etherscan.io/address/0xf163ee8639bbf85065c635358b4d407948710261`
+  // const tokenEtherscan = `https://rinkeby.etherscan.io/address/0xb7523a63Fce39E38fe0B76B417ac42578E5B1939`
   return (
     <>
       <div style={{ padding: 8, marginTop: 32, width: 300, margin: 'auto' }}>
-        <Card title="Your Tokens" extra={<a href="#">code</a>}>
+
+        <Card title="Your Tokens" extra={<a href={vendorEtherscan}>code</a>}>
           <div style={{ padding: 8 }}>
             <Balance balance={yourTokenBalance} address={undefined} />
           </div>
@@ -190,7 +200,7 @@ export const YourToken: FC<IYourTokenProps> = (props) => {
       {transferDisplay}
       <Divider />
       <div style={{ padding: 8, marginTop: 32, width: 300, margin: 'auto' }}>
-        <Card title="Buy Tokens" extra={<a href="#">code</a>}>
+        <Card title="Buy Tokens" extra={<a href={vendorEtherscan}>code</a>}>
           <div style={{ padding: 8 }}>{tokensPerEth && tokensPerEth} tokens per ETH</div>
 
           <div style={{ padding: 8 }}>
