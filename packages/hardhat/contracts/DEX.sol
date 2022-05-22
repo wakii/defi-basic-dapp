@@ -142,7 +142,7 @@ contract DEX {
     function withdraw(uint256 liq_amount) public returns (uint256, uint256) {
         require(liquidity[msg.sender] >= liq_amount, "DEX: withdraw: - User has less liquidity token in the pool");
         uint256 tokenReserve = token.balanceOf(address(this));
-        uint256 eth_amount = liq_amount * address(this).balance / totalLiquidity;  // token_amount * (price of totalLiquidity w.r.t token balance)
+        uint256 eth_amount = liq_amount * address(this).balance / totalLiquidity;  // liquidity_amount * (price of totalLiquidity w.r.t ETH balance)
         uint256 token_amount = liq_amount * tokenReserve / totalLiquidity;
         liquidity[msg.sender] -= liq_amount;
         totalLiquidity -= liq_amount;
