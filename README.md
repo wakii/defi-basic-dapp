@@ -1,4 +1,4 @@
-# Pab Token Vendor Project
+# Pab Dex-V1 Project
 
 ## TL;DR 
 - Demo : https://wakii-dex-v1.surge.sh/
